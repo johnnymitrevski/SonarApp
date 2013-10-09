@@ -1,0 +1,44 @@
+.orange {
+    background-color: yellow;
+    font-weight: bold;
+    width: 100pt;
+    height: 15pt;
+}
+.green {
+    background-color: greenyellow;
+    font-weight: bold;
+    width: 100pt;
+    height: 15pt;
+}
+.red {
+    background-color: orangered;
+    font-weight: bold;
+    width: 100pt;
+    height: 15pt;
+}
+.black {
+    font-weight: bold;
+    width: 100pt;
+    height: 15pt;
+}
+.grey {
+    background-color: gainsboro;
+    font-weight: bold;
+    width: 100pt;
+    height: 15pt;
+}
+.greenSmall {
+    background-color: greenyellow;
+    width: 15pt;
+    height: 15pt;
+}
+.redSmall {
+    background-color: orangered;
+    width: 15pt;
+    height: 15pt;
+}
+.greySmall {
+    background-color: gainsboro;
+    width: 15pt;
+    height: 15pt;
+}

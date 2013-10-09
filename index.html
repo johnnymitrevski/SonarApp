@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='SonarApiModule'>
+<head>
+    <title>SonarApp - Display Sonar results for monitors</title>
+    <script src="scripts/vendor/angular.js"></script>
+    <script src="scripts/controllers/SonarAppController.js"></script>
+    <script src="scripts/services/SonarApiModule.js"></script>
+    <script src="scripts/model/ProjectData.js"></script>
+    <script src="scripts/model/SonarApplicationData.js"></script>
+    <script src="scripts/model/JenkinsApplicationData.js"></script>
+    <script src="scripts/model/MetricData.js"></script>
+    <link href="scripts/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="styles/sonarApp.css" rel="stylesheet">
+    <meta http-equiv="refresh" content="6000">
+</head>
+<body ng-controller="SonarAppController">
+    <header><h2>Telstra Digital Identity - Code Metrics</h2></header>
+    <table border="1" ng-init="loadData()">
+        <tr>
+            <td>Project Name</td>
+            <td>Build Status</td>
+            <td ng-repeat="metricDefinition in sonarApp.metricsDefinition"> {{ metricDefinition.name }} </td>
+        </tr>
+        <tr ng-repeat="project in sonarApp.projects">
+            <td><strong>{{ project.getName() }}</strong></td>
+            <td ng-class="populateBuildStatusCell(project)"></td>
+            <td ng-repeat="metric in project.getMetrics()" ng-class="populateMetricCell(metric)">{{ metric.getMetricCurrentValue() }}
+                <img ng-src="{{populateMetricImage(metric)}}">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
